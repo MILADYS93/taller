@@ -100,3 +100,10 @@ function NumerosOrdenados() {
     console.log("Ordenados de mayor a menor: " + NumeroMayores);
 
 }
+function AreaCirculo() {
+
+    let RadioCirculo = Number(prompt("ingrese el radio del circulo"));
+    let Areacirculo = (RadioCirculo * RadioCirculo) * 3.14;
+
+    console.log(`el area del circulo es ${Areacirculo}`);
+}
