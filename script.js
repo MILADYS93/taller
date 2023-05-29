@@ -164,3 +164,17 @@ function NumerosAmigos() {
         console.log('Los numeros no son amigos');
     }
 }
+function CompraProductos() {
+    let cantidadproductos = (prompt("ingrese la cantidad de productos "));
+    let valorproductos = (prompt("ingrese el valor del productos"));
+    let valorCompra = cantidadproductos * valorproductos
+    let iva = valorCompra * 0.19
+    console.log(`el valor de la compra es ${valorCompra}`);
+    console.log(`el valor del iva es ${iva}`)
+    if (valorCompra > 500000) {
+        console.log((valorCompra + 0.19));
+
+    } else if (valorCompra > 1000000) {
+        console.log((valorCompra - 0.10));
+    }
+}
