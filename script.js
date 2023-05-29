@@ -178,3 +178,71 @@ function CompraProductos() {
         console.log((valorCompra - 0.10));
     }
 }
+function Notas() {
+
+
+    const Nota_Uno = prompt("Ingrese la primera nota:");
+    const Nota_Dos = prompt("Ingrese la segunda nota:");
+    const Nota_Tres = prompt("Ingrese la tercera nota:");
+    let Nota_Cuatro = prompt("Ingrese la cuarta nota:");
+
+
+    if (Nota_Cuatro === 5) {
+        Nota_Uno++;
+        Nota_Dos++;
+        Nota_Tres++;
+    }
+
+    const NotaFinal = Nota_Uno * 0.1 + Nota_Dos * 0.2 + Nota_Tres * 0.3 + Nota_Cuatro * 0.4;
+
+    if (NotaFinal > 3.5) {
+        console.log("El estudiante ganó.");
+    } else {
+        console.log("El estudiante perdió.");
+    }
+}
+
+function encontrarEjerciciosExtremos() {
+    let maxEjecuciones = 0;
+    let minEjecuciones = Infinity;
+    let ejercicioMasEjecutado = "";
+    let ejercicioMenosEjecutado = "";
+
+    for (const ejercicio in ejecuciones) {
+        const numerojecuciones = ejecuciones[ejercicio];
+
+        if (numerojecuciones > maxEjecuciones) {
+            maxEjecuciones = numerojecuciones;
+            ejercicioMasEjecutado = ejercicio;
+        }
+
+        if (numerojecuciones < minEjecuciones) {
+            minEjecuciones = numerojecuciones;
+            ejercicioMenosEjecutado = ejercicio;
+        }
+    }
+
+    console.log("\n--- Resultados ---");
+    console.log("Ejercicios ejecutados:");
+    for (const ejercicio in ejecuciones) {
+        console.log(`${ejercicio}: ${ejecuciones[ejercicio]} veces`);
+    }
+    console.log("Ejercicio más ejecutado:", ejercicioMasEjecutado);
+    console.log("Ejercicio menos ejecutado:", ejercicioMenosEjecutado);
+}
+
+
+function ejecutarPrograma() {
+    let continuar = true;
+
+    while (continuar) {
+        mostrarMenu();
+        const seleccion = obtenerSeleccion();
+        continuar = ejecutarEjercicio(seleccion);
+    }
+
+    encontrarEjerciciosExtremos();
+}
+
+
+ejecutarPrograma();
