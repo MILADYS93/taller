@@ -107,3 +107,20 @@ function AreaCirculo() {
 
     console.log(`el area del circulo es ${Areacirculo}`);
 }
+function TipoTriangulo() {
+    let ladoUno = parseInt(prompt('Ingrese primer lado:'));
+    let ladoDos = parseInt(prompt('Ingrese segundo lado:'));
+    let ladoTres = parseInt(prompt('Ingrese tercer lado:'));
+    if (ladoUno == ladoDos && ladoUno == ladoTres) {
+        console.log('Triángulo equilatero.');
+
+    } else {
+        if (ladoUno == ladoDos || ladoUno == ladoTres || ladoDos == ladoTres) {
+            console.log('Triángulo isósceles.');
+
+        } else {
+            console.log('Triángulo escaleno.');
+
+        }
+    }
+}
