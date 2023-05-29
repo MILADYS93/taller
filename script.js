@@ -124,3 +124,43 @@ function TipoTriangulo() {
         }
     }
 }
+function NumerosAmigos() {
+    function divisores(numeros) {
+        let a = 1;
+        let b = 0;
+        let l = new Array();
+        while (a < numeros) {
+            let h = numeros % a;
+            if (h == 0) {
+                l[b] = a;
+                b++;
+            }
+            a++;
+        }
+        return l;
+    }
+
+    function suma(L) {
+        let lg = L.length;
+        let a = 0;
+        let sumar = 0;
+        while (a < lg) {
+            sumar = sumar + L[a];
+            a++;
+        }
+        return sumar;
+    }
+
+    PrimerNumero = prompt('Introduce el primer numero:');
+    SegundoNumero = prompt('Introduce el segundo numero:');
+    L1 = divisores(PrimerNumero);
+    L2 = divisores(SegundoNumero);
+    s1 = suma(L1);
+    s2 = suma(L2);
+
+    if (s1 == SegundoNumero && s2 == PrimerNumero) {
+        console.log('Los numeros son amigos');
+    } else {
+        console.log('Los numeros no son amigos');
+    }
+}
